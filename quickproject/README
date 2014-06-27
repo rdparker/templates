@@ -1,0 +1,21 @@
+Copyright (C) 2014 (#| TMPL_VAR author |#) (#| TMPL_VAR email |#)
+See the end of the file for license conditions.
+
+This is the stub README.txt for the (#| TMPL_VAR cap-name |#) project.
+
+
+This file is part of (#| TMPL_VAR cap_name |#).
+
+(#| TMPL_VAR cap_name |#) is free software: you can redistribute it
+and/or modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation, either version 3
+of the License, or (at your option) any later version.
+
+(#| TMPL_VAR cap_name |#) is distributed in the hope that it will be
+useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with (#| TMPL_VAR cap_name |#).  If not, see
+<http://www.gnu.org/licenses/>.

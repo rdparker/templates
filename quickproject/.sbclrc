@@ -1,0 +1,33 @@
+;;; -*- mode: lisp; -*-
+;;; The following lines added by ql:add-to-init-file:
+#-quicklisp
+(let ((quicklisp-init (merge-pathnames "quicklisp/setup.lisp"
+                                       (user-homedir-pathname))))
+  (when (probe-file quicklisp-init)
+    (load quicklisp-init)))
+
+(ql:quickload :quickproject)
+(setq quickproject:*author* "Ron Parker"
+      quickproject:*license* "LGPL"
+      quickproject:*template-directory* (merge-pathnames
+					 "projects/templates/quickproject/"
+					 (user-homedir-pathname)))
+(setq quickproject:*template-parameter-functions*
+      (cons (lambda ()
+	      (list :cap-name (string-capitalize quickproject::*name*)
+		    :email "<rdparker@gmail.com>"))
+	    quickproject:*template-parameter-functions*))
+
+(setq quickproject:*after-make-project-hooks*
+      (list
+       #'(lambda (pathname &key (depends-on) (name) &allow-other-keys)
+	   "Delete remove same files from the project.
+
+README.txt is hard-coded by quickproject, but I prefer a plain README.
+So delete the README.txt and allow quickproject to expand README from
+the quickproject:*template-directory*.
+
+Also, I keep a copy of .sbclrc there for reference, so delete it from
+the project."
+	   (delete-file #P"README.txt")
+	   (delete-file #P".sbclrc"))))

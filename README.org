@@ -1,0 +1,5 @@
+#+TITLE: Templates
+
+This project contains templates for creating Common Lisp projects with
+[[http://www.xach.com/lisp/quickproject/][quickproject]] and an init file for [[http://sbcl.org/][Steel Bank Common Lisp]] that makes
+use of them.
